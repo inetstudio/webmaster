@@ -1,0 +1,28 @@
+{
+    "name": "inetstudio/meta",
+    "description": "Package for meta",
+    "homepage": "https://github.com/inetstudio/meta",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Konstantin Bukin",
+        "email": "bukin@inetstudio.ru"
+      }
+    ],
+    "require": {
+      "inetstudio/admin-panel": "1.5.*",
+      "yandex/webmaster.api": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "InetStudio\\Meta\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "InetStudio\\Webmaster\\Providers\\WebmasterServiceProvider"
+        ]
+      }
+    }
+}
