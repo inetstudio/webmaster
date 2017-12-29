@@ -1,7 +1,7 @@
 {
-    "name": "inetstudio/meta",
-    "description": "Package for meta",
-    "homepage": "https://github.com/inetstudio/meta",
+    "name": "inetstudio/webmaster",
+    "description": "Package for webmaster",
+    "homepage": "https://github.com/inetstudio/webmaster",
     "license": "MIT",
     "authors": [
       {
