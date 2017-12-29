@@ -10,15 +10,8 @@
       }
     ],
     "require": {
-      "inetstudio/admin-panel": "1.5.*",
-      "yandex/webmaster.api": "dev-master"
+      "inetstudio/admin-panel": "1.5.*"
     },
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/yandex/webmaster.api"
-      }
-    ],
     "autoload": {
       "psr-4": {
         "InetStudio\\Meta\\": "src/"

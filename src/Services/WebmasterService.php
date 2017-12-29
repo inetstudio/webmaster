@@ -3,7 +3,7 @@
 namespace InetStudio\Webmaster\Services;
 
 use Illuminate\Http\Request;
-use yandex\webmaster\api\webmasterApi;
+use InetStudio\Webmaster\Libraries\Webmaster\webmasterApi;
 use InetStudio\Webmaster\Contracts\Services\WebmasterServiceContract;
 
 /**
