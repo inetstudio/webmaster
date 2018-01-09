@@ -34,6 +34,8 @@ class WebmasterService implements WebmasterServiceContract
         }
 
         if ($this->webmaster) {
+            $this->webmaster->triggerError = false;
+
             $hostsObj = $this->webmaster->getHosts();
 
             foreach ($hostsObj->hosts as $host) {
@@ -83,11 +85,25 @@ class WebmasterService implements WebmasterServiceContract
     {
         if ($this->webmaster) {
 
-            $textsResponse = $this->webmaster->getOriginalTexts($this->config['host_id']);
+            $offset = 0;
+            $originalTextsIDs = [];
+            $stop = false;
 
-            if (empty($textsResponse->error_code) && is_array($textsResponse->original_texts) && ! in_array($object->webmaster_id, array_column($textsResponse->original_texts, 'id'))) {
+            while (! $stop) {
+                $textsResponse = $this->webmaster->getOriginalTexts($this->config['host_id'], $offset);
 
-                $sendResult = $this->getSendOriginalText(html_entity_decode(strip_tags($object->content)));
+                if (empty($textsResponse->error_code) && (is_array($textsResponse->original_texts) && ! empty($textsResponse->original_texts))) {
+                    $originalTextsIDs = array_merge($originalTextsIDs, array_column($textsResponse->original_texts, 'id'));
+
+                    $offset += 100;
+                } else {
+                    $stop = true;
+                }
+            }
+
+            if (! in_array($object->webmaster_id, $originalTextsIDs)) {
+
+                $sendResult = $this->getSendOriginalText(trim(html_entity_decode(strip_tags($object->content))));
 
                 if (! empty($sendResult) && ($sendResult != false) && ! empty($sendResult->text_id)) {
                     $object->update([
