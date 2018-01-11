@@ -103,7 +103,7 @@ class WebmasterService implements WebmasterServiceContract
 
             if (! in_array($object->webmaster_id, $originalTextsIDs)) {
 
-                $sendResult = $this->getSendOriginalText(trim(html_entity_decode(strip_tags($object->content))));
+                $sendResult = $this->getSendOriginalText($this->fixBadText(trim(html_entity_decode(strip_tags($object->content)))));
 
                 if (! empty($sendResult) && ($sendResult != false) && ! empty($sendResult->text_id)) {
                     $object->update([
@@ -134,5 +134,17 @@ class WebmasterService implements WebmasterServiceContract
         } else {
             return $addResult;
         }
+    }
+
+    /**
+     * Вырезаем из текста битые символы.
+     *
+     * @param $text
+     *
+     * @return null|string|string[]
+     */
+    private function fixBadText($text): ?string
+    {
+        return preg_replace('/[\x00-\x1F\x7F]/', '', $text);
     }
 }
