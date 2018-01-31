@@ -145,6 +145,6 @@ class WebmasterService implements WebmasterServiceContract
      */
     private function fixBadText($text): ?string
     {
-        return preg_replace('/[\x00-\x1F\x7F]/', '', $text);
+        return preg_replace('/[\x00-\x1F\x7F]/', ' ', $text);
     }
 }
