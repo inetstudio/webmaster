@@ -25,16 +25,6 @@ class WebmasterServiceProvider extends ServiceProvider
     }
 
     /**
-     * Регистрация привязки в контейнере.
-     *
-     * @return void
-     */
-    public function register(): void
-    {
-        $this->registerBindings();
-    }
-
-    /**
      * Регистрация ресурсов.
      *
      * @return void
@@ -64,15 +54,5 @@ class WebmasterServiceProvider extends ServiceProvider
     protected function registerViews(): void
     {
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'admin.module.webmaster');
-    }
-
-    /**
-     * Регистрация привязок, алиасов и сторонних провайдеров сервисов.
-     *
-     * @return void
-     */
-    public function registerBindings(): void
-    {
-        $this->app->singleton(WebmasterServiceContract::class, WebmasterService::class);
     }
 }
