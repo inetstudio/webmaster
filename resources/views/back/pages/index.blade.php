@@ -22,7 +22,6 @@
                             'title' => 'ID приложения',
                         ],
                         'field' => [
-                            'class' => 'form-control',
                             'disabled' => true,
                         ],
                     ]) !!}
@@ -32,7 +31,6 @@
                             'title' => 'Пароль',
                         ],
                         'field' => [
-                            'class' => 'form-control',
                             'disabled' => true,
                         ],
                     ]) !!}
@@ -42,7 +40,6 @@
                             'title' => 'Callback URL',
                         ],
                         'field' => [
-                            'class' => 'form-control',
                             'disabled' => true,
                         ],
                     ]) !!}
@@ -52,7 +49,6 @@
                             'title' => 'Token',
                         ],
                         'field' => [
-                            'class' => 'form-control',
                             'disabled' => true,
                         ],
                     ]) !!}
