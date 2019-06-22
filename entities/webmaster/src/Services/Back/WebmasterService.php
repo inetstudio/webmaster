@@ -136,13 +136,13 @@ class WebmasterService implements WebmasterServiceContract
     protected function getSendOriginalText($content = null)
     {
         if (empty($content) || (iconv_strlen($content) < 500) || (iconv_strlen($content) > 32000)) {
-            return null;
+            return;
         }
 
         $addResult = $this->webmaster->addOriginalText($this->config['host_id'], $content);
 
         if (isset($addResult->error_code) || ! isset($addResult->text_id)) {
-            return null;
+            return;
         }
 
         return $addResult;

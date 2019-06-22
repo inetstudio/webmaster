@@ -3,7 +3,6 @@
 namespace InetStudio\WebmasterPackage\Webmaster\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use InetStudio\AdminPanel\Base\Http\Controllers\Controller;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use InetStudio\WebmasterPackage\Webmaster\Contracts\Services\Back\WebmasterServiceContract;

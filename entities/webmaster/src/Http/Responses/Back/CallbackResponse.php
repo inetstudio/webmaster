@@ -37,6 +37,6 @@ class CallbackResponse implements CallbackResponseContract
     {
         Session::flash('webmaster_access', $this->token);
 
-        return response()->redirectToRoute('back.webmaster.index');
+        return response()->redirectToRoute('back.webmaster.config');
     }
 }
