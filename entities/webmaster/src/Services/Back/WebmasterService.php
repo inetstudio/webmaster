@@ -32,7 +32,6 @@ class WebmasterService implements WebmasterServiceContract
         try {
             $this->webmaster = webmasterApi::initApi($this->config['token']);
         } catch (Exception $e) {
-
         }
 
         if ($this->webmaster) {
@@ -109,7 +108,6 @@ class WebmasterService implements WebmasterServiceContract
         }
 
         if (! in_array($object->webmaster_id, $originalTextsIDs)) {
-
             $sendResult = $this->getSendOriginalText(
                 $this->fixBadText(
                     trim(html_entity_decode(strip_tags($object->content)))
