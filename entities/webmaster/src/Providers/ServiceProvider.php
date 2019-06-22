@@ -1,21 +1,16 @@
 <?php
 
-namespace InetStudio\Webmaster\Providers;
+namespace InetStudio\WebmasterPackage\Webmaster\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use InetStudio\Webmaster\Services\WebmasterService;
-use InetStudio\Webmaster\Contracts\Services\WebmasterServiceContract;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * Class WebmasterServiceProvider
- * @package InetStudio\Webmaster\Providers
+ * Class ServiceProvider.
  */
-class WebmasterServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Загрузка сервиса.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -26,8 +21,6 @@ class WebmasterServiceProvider extends ServiceProvider
 
     /**
      * Регистрация ресурсов.
-     *
-     * @return void
      */
     protected function registerPublishes(): void
     {
@@ -38,8 +31,6 @@ class WebmasterServiceProvider extends ServiceProvider
 
     /**
      * Регистрация путей.
-     *
-     * @return void
      */
     protected function registerRoutes(): void
     {
@@ -48,8 +39,6 @@ class WebmasterServiceProvider extends ServiceProvider
 
     /**
      * Регистрация представлений.
-     *
-     * @return void
      */
     protected function registerViews(): void
     {

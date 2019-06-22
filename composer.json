@@ -1,25 +1,28 @@
 {
-    "name": "inetstudio/webmaster",
-    "description": "Package for webmaster",
-    "homepage": "https://github.com/inetstudio/webmaster",
-    "license": "MIT",
-    "authors": [
-      {
-        "name": "Konstantin Bukin",
-        "email": "bukin@inetstudio.ru"
-      }
-    ],
-    "autoload": {
-      "psr-4": {
-        "InetStudio\\Webmaster\\": "src/"
-      }
-    },
-    "extra": {
-      "laravel": {
-        "providers": [
-          "InetStudio\\Webmaster\\Providers\\WebmasterBindingsServiceProvider",
-          "InetStudio\\Webmaster\\Providers\\WebmasterServiceProvider"
-        ]
-      }
+  "name": "inetstudio/webmaster",
+  "description": "Package for webmaster",
+  "homepage": "https://github.com/inetstudio/webmaster",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Konstantin Bukin",
+      "email": "bukin@inetstudio.ru"
     }
+  ],
+  "require": {
+    "hardworm/webmaster.api": "1.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "InetStudio\\WebmasterPackage\\Webmaster\\": "entities/webmaster/src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "InetStudio\\WebmasterPackage\\Webmaster\\Providers\\BindingsServiceProvider",
+        "InetStudio\\WebmasterPackage\\Webmaster\\Providers\\ServiceProvider"
+      ]
+    }
+  }
 }

@@ -1,12 +1,11 @@
 <?php
 
-namespace InetStudio\Webmaster\Contracts\Services;
+namespace InetStudio\WebmasterPackage\Webmaster\Contracts\Services\Back;
 
 use Illuminate\Http\Request;
 
 /**
- * Interface WebmasterServiceContract
- * @package InetStudio\Webmaster\Contracts\Services
+ * Interface WebmasterServiceContract.
  */
 interface WebmasterServiceContract
 {
@@ -18,7 +17,8 @@ interface WebmasterServiceContract
     public function getConfig(): array;
 
     /**
-     * @param Request $request
+     * @param  Request  $request
+     *
      * @return array
      */
     public function getToken(Request $request): array;

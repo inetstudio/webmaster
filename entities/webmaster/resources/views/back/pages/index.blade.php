@@ -52,6 +52,7 @@
                             'disabled' => true,
                         ],
                     ]) !!}
+
                 </form>
             </div>
             <div class="ibox-footer">
@@ -60,7 +61,8 @@
                    class="btn btn-w-m btn-xs btn-default m-l-xs">{{ ($config['id']) ? 'Редактировать приложение' : 'Создать приложение' }}</a>
 
                 @if ($config['id'])
-                    <a href="https://oauth.yandex.ru/authorize?response_type=code&client_id={{ $config['id'] }}" class="btn btn-xs btn-w-m btn-primary m-l-xs">Получить token</a>
+                    <a href="https://oauth.yandex.ru/authorize?response_type=code&client_id={{ $config['id'] }}"
+                       class="btn btn-xs btn-w-m btn-primary m-l-xs">Получить token</a>
                 @endif
             </div>
         </div>
@@ -68,15 +70,15 @@
 @endsection
 
 @pushonce('scripts:webmaster')
-    @if (session()->has('webmaster_access'))
-        <script>
-            $(document).ready(function () {
-                swal({
-                    title: "YANDEX_WEBMASTER_TOKEN",
-                    text: "Сохраните токен {{ session()->get('webmaster_access.token') }} в .env",
-                    type: "success"
-                });
-            })
-        </script>
-    @endif
+@if (session()->has('webmaster_access'))
+    <script>
+      $(document).ready(function() {
+        swal({
+          title: 'YANDEX_WEBMASTER_TOKEN',
+          text: "Сохраните токен {{ session()->get('webmaster_access.token') }} в .env",
+          type: 'success',
+        });
+      });
+    </script>
+@endif
 @endpushonce
