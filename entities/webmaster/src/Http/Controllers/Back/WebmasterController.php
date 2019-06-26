@@ -28,7 +28,12 @@ class WebmasterController extends Controller implements WebmasterControllerContr
     {
         $config = $webmasterService->getConfig();
 
-        return $this->app->make(ConfigResponseContract::class, compact('config'));
+        return $this->app->make(
+            ConfigResponseContract::class,
+            [
+                'data' => compact('config')
+            ]
+        );
     }
 
     /**
