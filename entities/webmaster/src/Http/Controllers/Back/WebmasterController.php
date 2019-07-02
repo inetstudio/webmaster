@@ -31,7 +31,7 @@ class WebmasterController extends Controller implements WebmasterControllerContr
         return $this->app->make(
             ConfigResponseContract::class,
             [
-                'data' => compact('config')
+                'data' => compact('config'),
             ]
         );
     }
