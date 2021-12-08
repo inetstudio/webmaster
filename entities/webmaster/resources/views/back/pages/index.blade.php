@@ -73,10 +73,10 @@
 @if (session()->has('webmaster_access'))
     <script>
       $(document).ready(function() {
-        swal({
+        Swal.fire({
           title: 'YANDEX_WEBMASTER_TOKEN',
           text: "Сохраните токен {{ session()->get('webmaster_access.token') }} в .env",
-          type: 'success',
+          icon: 'success',
         });
       });
     </script>
